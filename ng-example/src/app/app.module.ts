@@ -11,12 +11,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { BooksComponent } from './books/books.component';
 /*Services*/
 import { WeatherService } from './home/home.service';
+/* directives */
+import { HighlightDirective } from './_Directives/highlight.directive';
+/* Pipes */
+import { EllipsisPipe } from './_Pipes/ellipsis.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    BooksComponent
+    BooksComponent,
+    HighlightDirective,
+    EllipsisPipe
 ],
   imports: [
     BrowserModule,
