@@ -11,10 +11,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { BooksComponent } from './books/books.component';
 /*Services*/
 import { WeatherService } from './home/home.service';
+import { CanActivateAuthGuard } from "./shared/can-activate.service";
+import { UserProfileService } from "./shared/user-profile.service";
 /* directives */
 import { HighlightDirective } from './_Directives/highlight.directive';
 /* Pipes */
 import { EllipsisPipe } from './_Pipes/ellipsis.pipe';
+import { LoginComponent } from './login/login.component';
+import { RouteComponent } from "./shared/route.component";
 
 @NgModule({
   declarations: [
@@ -22,7 +26,9 @@ import { EllipsisPipe } from './_Pipes/ellipsis.pipe';
     HomeComponent,
     BooksComponent,
     HighlightDirective,
-    EllipsisPipe
+    EllipsisPipe,
+    LoginComponent,
+    RouteComponent
 ],
   imports: [
     BrowserModule,
@@ -30,7 +36,7 @@ import { EllipsisPipe } from './_Pipes/ellipsis.pipe';
     FormsModule,
     HttpModule
   ],
-  providers: [WeatherService],
+  providers: [WeatherService,CanActivateAuthGuard,UserProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
