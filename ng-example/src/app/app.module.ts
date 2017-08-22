@@ -19,6 +19,7 @@ import { HighlightDirective } from './_Directives/highlight.directive';
 import { EllipsisPipe } from './_Pipes/ellipsis.pipe';
 import { LoginComponent } from './login/login.component';
 import { RouteComponent } from "./shared/route.component";
+import { LoginService } from "./login/login.service";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { RouteComponent } from "./shared/route.component";
     FormsModule,
     HttpModule
   ],
-  providers: [WeatherService,CanActivateAuthGuard,UserProfileService],
+  providers: [WeatherService,CanActivateAuthGuard,UserProfileService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
