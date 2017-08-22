@@ -20,6 +20,8 @@ import { EllipsisPipe } from './_Pipes/ellipsis.pipe';
 import { LoginComponent } from './login/login.component';
 import { RouteComponent } from "./shared/route.component";
 import { LoginService } from "./login/login.service";
+import { BooksManagerComponent } from './books-manager/books-manager.component';
+import { BooksFiltersComponent } from './books-filters/books-filters.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { LoginService } from "./login/login.service";
     HighlightDirective,
     EllipsisPipe,
     LoginComponent,
-    RouteComponent
+    RouteComponent,
+    BooksManagerComponent,
+    BooksFiltersComponent
 ],
   imports: [
     BrowserModule,
