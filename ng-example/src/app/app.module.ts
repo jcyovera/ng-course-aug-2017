@@ -22,6 +22,7 @@ import { RouteComponent } from "./shared/route.component";
 import { LoginService } from "./login/login.service";
 import { BooksManagerComponent } from './books-manager/books-manager.component';
 import { BooksFiltersComponent } from './books-filters/books-filters.component';
+import { EmitterService } from "./shared/emitter.service";
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { BooksFiltersComponent } from './books-filters/books-filters.component';
     FormsModule,
     HttpModule
   ],
-  providers: [WeatherService,CanActivateAuthGuard,UserProfileService, LoginService],
+  providers: [WeatherService,CanActivateAuthGuard,UserProfileService, LoginService, EmitterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

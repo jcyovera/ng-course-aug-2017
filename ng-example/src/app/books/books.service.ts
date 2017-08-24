@@ -16,6 +16,8 @@ export class BooksService {
         let params = new URLSearchParams();
         params.set('_sort', String(filters.sortBy));
         params.set('_order',"ASC");
+        params.set('q',String(filters.searchText));
+        
         return this.booksObserver = this.http.get(requestUrl,{search:params}).map(res => res.json() as IBooks[]);
     }    
 }
