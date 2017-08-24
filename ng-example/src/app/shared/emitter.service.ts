@@ -12,3 +12,11 @@ export class EmitterService {
         return this._emitters[ID];
     }
 }
+
+@Injectable()
+export class EmitterServiceMock {
+    emiterInstance: EventEmitter<any> = new EventEmitter<any>();
+    get(): EventEmitter<any> {
+        return this.emiterInstance;
+    }
+}

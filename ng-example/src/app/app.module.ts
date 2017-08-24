@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -23,6 +23,7 @@ import { LoginService } from "./login/login.service";
 import { BooksManagerComponent } from './books-manager/books-manager.component';
 import { BooksFiltersComponent } from './books-filters/books-filters.component';
 import { EmitterService } from "./shared/emitter.service";
+import { RegisterUserComponent } from './register-user/register-user.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +35,15 @@ import { EmitterService } from "./shared/emitter.service";
     LoginComponent,
     RouteComponent,
     BooksManagerComponent,
-    BooksFiltersComponent
+    BooksFiltersComponent,
+    RegisterUserComponent
 ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule
   ],
   providers: [WeatherService,CanActivateAuthGuard,UserProfileService, LoginService, EmitterService],
   bootstrap: [AppComponent]

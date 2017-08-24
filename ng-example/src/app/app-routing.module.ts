@@ -5,6 +5,7 @@ import { LoginComponent } from "./login/login.component";
 import { CanActivateAuthGuard } from "./shared/can-activate.service";
 import { RouteComponent } from "./shared/route.component";
 import { BooksManagerComponent } from "./books-manager/books-manager.component";
+import { RegisterUserComponent } from "./register-user/register-user.component";
 
 const routes: Routes = [
     {
@@ -22,6 +23,7 @@ const routes: Routes = [
         ]
     },*/
     { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterUserComponent },
     { path: 'about', loadChildren: 'app/about/about.module#AboutModule' },
     { path: '**', redirectTo: 'not-found' }
 ];
