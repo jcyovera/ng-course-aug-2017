@@ -19,3 +19,10 @@ export class EllipsisPipe implements PipeTransform{
     }
 
 }
+@Pipe({name: 'myEllipsis'})
+export class MockEllipsisPipe implements PipeTransform {
+    transform(value: number): number {
+        //Do stuff here, if you want
+        return value;
+    }
+}
