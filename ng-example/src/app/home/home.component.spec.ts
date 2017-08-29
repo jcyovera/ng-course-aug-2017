@@ -1,48 +1,31 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { HomeComponent } from './home.component';
-import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
-import { FormsModule } from "@angular/forms";
-import { HttpModule } from "@angular/http";
+import { TestBed, async } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA, EventEmitter } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HomeComponent } from "./home.component";
 import { WeatherService } from "./home.service";
-import { EllipsisPipe, MockEllipsisPipe } from "../_Pipes/ellipsis.pipe";
-import { Observable } from "rxjs/Rx";
+import { EllipsisPipe } from "../_Pipes/ellipsis.pipe";
 
-describe('Home', () => {
-  let MockWeatherService={};
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+describe('Home Component', () => {
+  let EmitterMock={};
+  let WeatherServiceMock={};
 
-  // provide our implementations or mocks to the dependency injector
-  beforeEach(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FormsModule],
-      declarations: [HomeComponent, MockEllipsisPipe],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      providers: [
-        { provide: WeatherService, useValue: MockWeatherService }]
-    });
-  });
-  beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+      imports: [RouterTestingModule, FormsModule],
+      declarations: [
+        HomeComponent, EllipsisPipe
+      ],
+      providers:[
+        { provide:WeatherService, useValue:WeatherServiceMock}
+      ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    }).compileComponents();
+  }));
 
-  it('should have an instance', () => {
-    let model = {data:true};
-    let service = TestBed.get(WeatherService);
-    service.getWeather = () => {
-        return Observable.of(model)
-    }
-    spyOn(service, "getWeather").and.returnValue(Observable.of(model));
-
-    expect(component).toBeDefined();
-    expect(service.getWeather).toHaveBeenCalled();
-  });
-  it('should be return a image url',()=>{
-     let image="demo";
-     component.getImageWeather(image);
-     expect(component.getImageWeather).toHaveBeenCalled();
-  });
+  it('should create the home', async(() => {
+    const fixture = TestBed.createComponent(HomeComponent);
+    const home = fixture.debugElement.componentInstance;
+    expect(home).toBeTruthy();
+  }));
 });

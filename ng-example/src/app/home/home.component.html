@@ -3,7 +3,7 @@
 </p>
 <div class="col-lg-4">
   <div class="card" *ngIf="currentWeather" >
-    <h3 class="card-header">{{ currentWeather.cityName | myEllipsis:5 }} </h3>
+    <h3 class="card-header">{{ currentWeather.cityName | myEllipsis:5}} </h3>
     <div class="card-block">
       <img height="50" width="50" alt="Weather API Day Thunderstorm with light rain"  
       [src]="getImageWeather(currentWeather.weather.icon)" />
