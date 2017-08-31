@@ -12,16 +12,16 @@ const routes: Routes = [
         path: '',
         component: HomeComponent
     },
-    { path: 'books', component: BooksManagerComponent },
-    /*{
+    ///{ path: 'books', component: BooksManagerComponent },
+    {
         path:'books',
         component:RouteComponent,
         canActivate:[CanActivateAuthGuard],
         canActivateChild:[CanActivateAuthGuard],
         children:[
-            { path: '', component: BooksComponent }
+            { path: '', component: BooksManagerComponent }
         ]
-    },*/
+    },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterUserComponent },
     { path: 'about', loadChildren: 'app/about/about.module#AboutModule' },
